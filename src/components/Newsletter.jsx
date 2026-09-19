@@ -1,40 +1,69 @@
-function Newsletter() {
-  return (
-    <section className="py-24 bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-600">
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl p-10 md:p-16 text-center border border-white/20">
-          <span className="inline-block bg-yellow-400 text-black px-5 py-2 rounded-full font-bold text-sm mb-6">
-            🎁 LIMITED TIME OFFER
-          </span>
+import { useState } from "react";
 
-          <h2 className="text-5xl font-extrabold text-white leading-tight">
-            Get <span className="text-yellow-300">20% OFF</span> <br />
-            On Your First Order
+function Newsletter() {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+
+    if (!email.trim()) {
+      setMessage("Please enter your email address.");
+      return;
+    }
+
+    if (!email.includes("@") || !email.includes(".")) {
+      setMessage("Please enter a valid email address.");
+      return;
+    }
+
+    setMessage("🎉 Successfully subscribed! Welcome to ShopSphere.");
+    setEmail("");
+  };
+
+  return (
+    <section className="px-6 py-16">
+      <div className="max-w-6xl mx-auto rounded-3xl bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 p-8 md:p-12 text-white shadow-xl">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-extrabold">
+            Stay Updated with ShopSphere
           </h2>
 
-          <p className="mt-6 text-lg text-gray-200 max-w-2xl mx-auto">
-            Subscribe to ShopSphere and be the first to know about exclusive
-            deals, new arrivals, flash sales and member-only discounts.
+          <p className="mt-3 text-white/80">
+            Get the latest arrivals, flash sales and member-only discounts.
           </p>
+        </div>
 
-          <div className="mt-10 flex flex-col md:flex-row gap-4 justify-center">
-            <input
-              type="email"
-              placeholder="📧 Enter your email address"
-              className="w-full md:w-[420px] px-6 py-4 rounded-2xl outline-none text-black shadow-lg"
-            />
+        <form
+          onSubmit={handleSubscribe}
+          className="flex flex-col md:flex-row gap-4 max-w-3xl mx-auto"
+        >
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              setMessage("");
+            }}
+            placeholder="Enter your email address"
+            className="flex-1 px-5 py-4 rounded-2xl text-gray-900 outline-none"
+          />
 
-            <button className="bg-yellow-400 text-black px-10 py-4 rounded-2xl font-bold hover:scale-105 hover:bg-yellow-300 duration-300 shadow-lg">
-              Subscribe Now 🚀
-            </button>
-          </div>
+          <button
+            type="submit"
+            className="px-8 py-4 rounded-2xl bg-yellow-400 text-black font-bold hover:bg-yellow-300 transition-all duration-300"
+          >
+            Subscribe Now 🚀
+          </button>
+        </form>
 
-          <div className="flex flex-wrap justify-center gap-8 mt-10 text-white font-medium">
-            <span>✅ Exclusive Offers</span>
-            <span>🚚 Free Shipping</span>
-            <span>🔥 Flash Sales</span>
-            <span>❌ No Spam</span>
-          </div>
+        {message && <p className="text-center mt-5 font-semibold">{message}</p>}
+
+        <div className="flex flex-wrap justify-center gap-8 mt-10 text-sm md:text-base font-semibold">
+          <span>✅ Exclusive Offers</span>
+          <span>🚚 Free Shipping</span>
+          <span>🔥 Flash Sales</span>
+          <span>❌ No Spam</span>
         </div>
       </div>
     </section>

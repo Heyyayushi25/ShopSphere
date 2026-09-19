@@ -1,8 +1,6 @@
 import {
-  FaFacebookF,
-  FaInstagram,
-  FaTwitter,
   FaLinkedinIn,
+  FaGithub,
   FaMapMarkerAlt,
   FaPhoneAlt,
   FaEnvelope,
@@ -25,33 +23,28 @@ function Footer() {
               Furniture with premium quality and amazing deals.
             </p>
 
+            {/* Social Links */}
             <div className="flex gap-4 mt-6">
+              {/* LinkedIn */}
               <a
-                href="#"
-                className="bg-gray-800 p-3 rounded-full hover:bg-indigo-600 duration-300"
-              >
-                <FaFacebookF />
-              </a>
-
-              <a
-                href="#"
-                className="bg-gray-800 p-3 rounded-full hover:bg-pink-600 duration-300"
-              >
-                <FaInstagram />
-              </a>
-
-              <a
-                href="#"
-                className="bg-gray-800 p-3 rounded-full hover:bg-sky-500 duration-300"
-              >
-                <FaTwitter />
-              </a>
-
-              <a
-                href="#"
+                href="https://www.linkedin.com/in/ayushi-srivastava-3b86a025a/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
                 className="bg-gray-800 p-3 rounded-full hover:bg-blue-700 duration-300"
               >
                 <FaLinkedinIn />
+              </a>
+
+              {/* GitHub */}
+              <a
+                href="https://github.com/Heyyayushi25"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="bg-gray-800 p-3 rounded-full hover:bg-gray-600 duration-300"
+              >
+                <FaGithub />
               </a>
             </div>
           </div>
@@ -125,18 +118,6 @@ function Footer() {
                 <FaEnvelope />
                 support@shopsphere.com
               </p>
-            </div>
-
-            <div className="mt-6">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full p-3 rounded-lg text-black outline-none"
-              />
-
-              <button className="mt-3 w-full bg-indigo-600 py-3 rounded-lg hover:bg-indigo-700 duration-300 font-semibold">
-                Subscribe
-              </button>
             </div>
           </div>
         </div>

@@ -16,13 +16,38 @@
 // }
 
 // export default Home;
+// import Navbar from "../components/Navbar";
+// import Hero from "../components/Hero";
+// import Categories from "../components/Categories";
+// import FeaturedProducts from "../components/FeaturedProducts";
+// import OfferBanner from "../components/OfferBanner";
+// import WhyChooseUs from "../components/WhyChooseUs";
+// import Newsletter from "../components/Newsletter";
+// import Footer from "../components/Footer";
+
+// function Home() {
+//   return (
+//     <>
+//       <Navbar />
+//       <Hero />
+//       <Categories />
+//       <FeaturedProducts />
+//       <OfferBanner />
+//       <WhyChooseUs />
+//       <Newsletter />
+
+//       <Footer />
+//     </>
+//   );
+// }
+
+// export default Home;
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Categories from "../components/Categories";
 import FeaturedProducts from "../components/FeaturedProducts";
 import OfferBanner from "../components/OfferBanner";
 import WhyChooseUs from "../components/WhyChooseUs";
-import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 
 function Home() {
@@ -34,8 +59,6 @@ function Home() {
       <FeaturedProducts />
       <OfferBanner />
       <WhyChooseUs />
-      <Newsletter />
-
       <Footer />
     </>
   );
